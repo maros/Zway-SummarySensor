@@ -1,0 +1,71 @@
+{
+   "author" : "Maroš Kollár",
+   "category" : "device_enhancements",
+   "defaults" : {
+      "description" : "__description__",
+      "summary" : "average",
+      "title" : "__title__"
+   },
+   "dependencies" : [],
+   "homepage" : "http://k-1.com",
+   "icon" : "icon.png",
+   "maturity" : "stable",
+   "moduleName" : "SummarySensor",
+   "options" : {
+      "fields" : {
+         "devices" : {
+            "fields" : {
+               "item" : {
+                  "datasource" : "namespaces",
+                  "field" : "devices",
+                  "optionLabels" : "namespaces:devices_sensorMultilevel:deviceName",
+                  "type" : "select"
+               }
+            },
+            "label" : "__devices_label__"
+         },
+         "summary" : {
+            "label" : "__summary_label__",
+            "optionLabels" : [
+               "__summary_average__",
+               "__summary_min__",
+               "__summary_max__",
+               "__summary_count__",
+               "__summary_count__",
+               "__summary_sum__"
+            ]
+         }
+      }
+   },
+   "repository" : {
+      "source" : "https://github.com/maros/Zway-SummarySensor",
+      "type" : "git"
+   },
+   "schema" : {
+      "properties" : {
+         "devices" : {
+            "items" : {
+               "datasource" : "namespaces",
+               "enum" : "namespaces:devices_sensorMultilevel:deviceId",
+               "field" : "enum",
+               "required" : true
+            },
+            "type" : "array"
+         },
+         "summary" : {
+            "enum" : [
+               "average",
+               "min",
+               "max",
+               "count",
+               "sum"
+            ],
+            "required" : true,
+            "type" : "select"
+         }
+      },
+      "type" : "object"
+   },
+   "singleton" : false,
+   "version" : "1.0.0"
+}

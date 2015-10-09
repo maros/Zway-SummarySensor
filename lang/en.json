@@ -1,0 +1,11 @@
+{
+    "title" : "Sensor summary",
+    "description" : " Create a device that summarises multiple sensors into one virtual device",
+    "devices_label" : "Devices",
+    "summary_label" : "Summary method",
+    "summary_average" : "Average",
+    "summary_count" : "Count non zero values",
+    "summary_max" : "Max value",
+    "summary_min" : "Min value",
+    "summary_sum" : "Sum values"
+}
