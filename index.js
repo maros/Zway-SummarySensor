@@ -49,29 +49,33 @@ SummarySensor.prototype.init = function (config) {
 SummarySensor.prototype.initCallback = function() {
     var self = this;
     
-    var callback = _.bind(self.updateSensors,self);
-    callback();
+    self.callback = _.bind(self.updateSensors,self);
+    self.callback();
     
     var firstDevice = self.controller.devices.get(self.config.devices[0]);
-    console.logJS(firstDevice);
     self.vDev.set('metrics:icon',firstDevice.get('metrics:icon'));
     self.vDev.set('metrics:scaleTitle',firstDevice.get('metrics:scaleTitle'));
     
     _.each(self.config.devices,function(deviceId) {
         var device = self.controller.devices.get(deviceId);
-        device.on('change:metrics:level',callback);
+        device.on('change:metrics:level',self.callback);
     });
 };
 
 SummarySensor.prototype.stop = function() {
     var self = this;
     
-    SummarySensor.super_.prototype.stop.call(this);
-    
     if (self.vDev) {
         self.controller.devices.remove(self.vDev.id);
         self.vDev = null;
     }
+    
+    _.each(self.config.devices,function(deviceId) {
+        var device = self.controller.devices.get(deviceId);
+        device.off('change:metrics:level',self.callback);
+    });
+    
+    SummarySensor.super_.prototype.stop.call(this);
 };
 
 // ----------------------------------------------------------------------------
