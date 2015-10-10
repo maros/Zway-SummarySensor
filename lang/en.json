@@ -1,6 +1,6 @@
 {
     "title" : "Sensor summary",
-    "description" : " Create a device that summarises multiple sensors into one virtual device",
+    "description" : "Create a device that summarises multiple sensors into one virtual device",
     "devices_label" : "Devices",
     "summary_label" : "Summary method",
     "summary_average" : "Average",
