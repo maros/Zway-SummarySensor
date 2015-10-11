@@ -43,7 +43,7 @@ SummarySensor.prototype.init = function (config) {
         moduleId: this.id
     });
     
-    setTimeout(_.bind(self.initCallback,self),10000);
+    setTimeout(_.bind(self.initCallback,self),15000);
 };
 
 SummarySensor.prototype.initCallback = function() {
@@ -58,7 +58,9 @@ SummarySensor.prototype.initCallback = function() {
     
     _.each(self.config.devices,function(deviceId) {
         var device = self.controller.devices.get(deviceId);
-        device.on('change:metrics:level',self.callback);
+        if (typeof(device) !== 'null') {
+            device.on('change:metrics:level',self.callback);
+        }
     });
 };
 
@@ -72,7 +74,9 @@ SummarySensor.prototype.stop = function() {
     
     _.each(self.config.devices,function(deviceId) {
         var device = self.controller.devices.get(deviceId);
-        device.off('change:metrics:level',self.callback);
+        if (typeof(device) !== 'null') {
+            device.off('change:metrics:level',self.callback);
+        }
     });
     
     SummarySensor.super_.prototype.stop.call(this);
