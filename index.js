@@ -37,8 +37,7 @@ SummarySensor.prototype.init = function (config) {
             }
         },
         overlay: {
-            deviceType: 'sensorMultilevel',
-            scaleTitle: ''
+            deviceType: 'sensorMultilevel'
         },
         moduleId: this.id
     });
@@ -53,13 +52,13 @@ SummarySensor.prototype.initCallback = function() {
     self.callback();
     
     var firstDevice = self.controller.devices.get(self.config.devices[0]);
-    _.each(['icon','scaleTitle','probeTitle'].function(type) {
+    _.each(['icon','scaleTitle','probeTitle'],function(type) {
         self.vDev.set('metrics:'+type,firstDevice.get('metrics:'+type));
     });
     
     _.each(self.config.devices,function(deviceId) {
         var device = self.controller.devices.get(deviceId);
-        if (typeof(device) !== 'null') {
+        if (typeof(device) !== 'undefined') {
             device.on('change:metrics:level',self.callback);
         }
     });
@@ -70,12 +69,12 @@ SummarySensor.prototype.stop = function() {
     
     if (self.vDev) {
         self.controller.devices.remove(self.vDev.id);
-        self.vDev = null;
+        self.vDev = undefined;
     }
     
     _.each(self.config.devices,function(deviceId) {
         var device = self.controller.devices.get(deviceId);
-        if (typeof(device) !== 'null') {
+        if (typeof(device) !== 'undefined') {
             device.off('change:metrics:level',self.callback);
         }
     });
