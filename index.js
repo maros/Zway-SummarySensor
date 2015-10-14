@@ -53,8 +53,9 @@ SummarySensor.prototype.initCallback = function() {
     self.callback();
     
     var firstDevice = self.controller.devices.get(self.config.devices[0]);
-    self.vDev.set('metrics:icon',firstDevice.get('metrics:icon'));
-    self.vDev.set('metrics:scaleTitle',firstDevice.get('metrics:scaleTitle'));
+    _.each(['icon','scaleTitle','probeTitle'].function(type) {
+        self.vDev.set('metrics:'+type,firstDevice.get('metrics:'+type));
+    });
     
     _.each(self.config.devices,function(deviceId) {
         var device = self.controller.devices.get(deviceId);
