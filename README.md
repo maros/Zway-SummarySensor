@@ -8,8 +8,8 @@ calculate the value.
 
 ## devices
 
-List of devices to be summarised. The icon and scale will be taken from the
-first device.
+List of devices to be summarised. The icon, scaleTitle and probeTitle will be 
+taken from the first device in the list.
 
 ## summary
 
