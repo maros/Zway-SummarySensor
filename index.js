@@ -58,7 +58,9 @@ SummarySensor.prototype.initCallback = function() {
     
     _.each(self.config.devices,function(deviceId) {
         var device = self.controller.devices.get(deviceId);
-        if (typeof(device) !== 'undefined') {
+        if (device == 'null') {
+            console.error('[SummarySensor] Missing device '+deviceId);
+        } else {
             device.on('change:metrics:level',self.callback);
         }
     });
