@@ -22,7 +22,8 @@
                   "type" : "select"
                }
             },
-            "label" : "__devices_label__"
+            "label" : "__devices_label__",
+            "order": 2
          },
          "summary" : {
             "label" : "__summary_label__",
@@ -33,7 +34,8 @@
                "__summary_count__",
                "__summary_count__",
                "__summary_sum__"
-            ]
+            ],
+            "order": 1
          }
       }
    },
