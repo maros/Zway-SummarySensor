@@ -57,11 +57,11 @@ SummarySensor.prototype.initCallback = function() {
     });
     
     _.each(self.config.devices,function(deviceId) {
-        var device = self.controller.devices.get(deviceId);
-        if (device == 'null') {
+        var deviceObject = self.controller.devices.get(deviceId);
+        if (deviceObject === null) {
             console.error('[SummarySensor] Missing device '+deviceId);
         } else {
-            device.on('change:metrics:level',self.callback);
+            deviceObject.on('change:metrics:level',self.callback);
         }
     });
 };
@@ -75,9 +75,9 @@ SummarySensor.prototype.stop = function() {
     }
     
     _.each(self.config.devices,function(deviceId) {
-        var device = self.controller.devices.get(deviceId);
-        if (typeof(device) !== 'undefined') {
-            device.off('change:metrics:level',self.callback);
+        var deviceObject = self.controller.devices.get(deviceId);
+        if (deviceObject!== null) {
+            deviceObject.off('change:metrics:level',self.callback);
         }
     });
     
