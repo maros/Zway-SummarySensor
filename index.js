@@ -94,8 +94,11 @@ SummarySensor.prototype.updateSensors = function() {
     var values = [];
     
     _.each(self.config.devices,function(deviceId) {
-        var device = self.controller.devices.get(deviceId);
-        var value = device.get('metrics:level');
+        var deviceObject = self.controller.devices.get(deviceId);
+        if (deviceObject === null) {
+            return;
+        }
+        var value = deviceObject.get('metrics:level');
         value = parseFloat(value);
         if (_.isNumber(value)) {
             values.push(value);
