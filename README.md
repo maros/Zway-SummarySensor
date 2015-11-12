@@ -2,7 +2,7 @@
 
 Creates a device that summarises multiple sensors into one virtual device. 
 Multiple aggregate functions like average, min, max, ... can be used to 
-calculate the value.
+calculate the displayed value.
 
 # Configuration
 
