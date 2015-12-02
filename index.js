@@ -110,7 +110,7 @@ SummarySensor.prototype.updateSensors = function() {
         switch(self.config.summary) {
             case 'average':
                 summary = _.reduce(values,function(m,n) {
-                    return m + n
+                    return m + n;
                 },0);
                 summary = summary/values.length;
                 break;
