@@ -1,0 +1,11 @@
+{
+    "title" : "Sensor Zusammenfassung",
+    "description" : "Erstellt ein virtuelles Gerät dass Daten von mehrern Sensoren zusammenfassen kann.",
+    "devices_label" : "Geräte",
+    "summary_label" : "Zusammenfassungs Methode",
+    "summary_average" : "Durchschnitt",
+    "summary_count" : "Zähle Geräte deren Werte ungleich 0 sind",
+    "summary_max" : "Maximum",
+    "summary_min" : "Minimum,
+    "summary_sum" : "Summme"
+}
