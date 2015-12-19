@@ -6,6 +6,6 @@
     "summary_average" : "Durchschnitt",
     "summary_count" : "Zähle Geräte deren Werte ungleich 0 sind",
     "summary_max" : "Maximum",
-    "summary_min" : "Minimum,
+    "summary_min" : "Minimum",
     "summary_sum" : "Summme"
 }

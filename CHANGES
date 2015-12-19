@@ -1,0 +1,13 @@
+1.02 2015 Dec 19, Sat
+    * German translation
+    * fix jshint issues
+    * Update documentation
+    * Check for missing devices
+    * Add unique and min constraint
+    * Add field order
+    * Update author
+
+1.01 2015 Oct 25, Sun
+
+1.00 2015 Oct 14, Wed
+    * Initial release
