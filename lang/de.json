@@ -1,6 +1,6 @@
 {
-    "title" : "Sensor Zusammenfassung",
-    "description" : "Erstellt ein virtuelles Gerät dass Daten von mehrern Sensoren zusammenfassen kann.",
+    "m_title" : "Sensor Zusammenfassung",
+    "m_descr" : "Erstellt ein virtuelles Gerät dass Daten von mehrern Sensoren zusammenfassen kann.",
     "devices_label" : "Geräte",
     "summary_label" : "Zusammenfassungs Methode",
     "summary_average" : "Durchschnitt",
