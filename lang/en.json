@@ -1,8 +1,8 @@
 {
     "m_title" : "Sensor summary",
-    "m_descr" : "Create a device that summarises multiple sensors into one virtual device",
+    "m_descr" : "Creates a device that summarises multiple multilevel sensors into one virtual sensor with one aggregated value. Multiple aggregate methods like minimum, maximum, average, ... can be selected.",
     "devices_label" : "Devices",
-    "summary_label" : "Summary method",
+    "summary_label" : "Aggregate method",
     "summary_average" : "Average",
     "summary_count" : "Count non zero values",
     "summary_max" : "Max value",

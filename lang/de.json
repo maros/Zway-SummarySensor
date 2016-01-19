@@ -1,10 +1,10 @@
 {
     "m_title" : "Sensor Zusammenfassung",
-    "m_descr" : "Erstellt ein virtuelles Gerät dass Daten von mehrern Sensoren zusammenfassen kann.",
+    "m_descr" : "Erstellt ein virtuellen Sensor der Daten von mehrern Sensoren zusammenfassen kann. Aggregatsfunktionen wie zB. Minimum, Maximum oder Durchshnitt können ausgewählt werden.",
     "devices_label" : "Geräte",
     "summary_label" : "Zusammenfassungs Methode",
     "summary_average" : "Durchschnitt",
-    "summary_count" : "Zähle Geräte deren Werte ungleich 0 sind",
+    "summary_count" : "Zähle Sensoren deren Werte ungleich 0 sind.",
     "summary_max" : "Maximum",
     "summary_min" : "Minimum",
     "summary_sum" : "Summme"
