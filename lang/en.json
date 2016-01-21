@@ -1,6 +1,6 @@
 {
    "devices_label" : "Devices",
-   "m_descr" : "Creates a device that summarises multiple multilevel sensors into one virtual sensor with one aggregated value. Multiple aggregate methods like minimum, maximum, average, ... can be selected.<br>Check  <a href=\"https://github.com/maros/Zway-SummarySensor/blob/master/README.md\">github.com/maros/Zway-SummarySensor</a> for detailed documentation.",
+   "m_descr" : "Creates a device that summarises multiple multilevel sensors into one virtual sensor with one aggregated value. Multiple aggregate methods like minimum, maximum, average, ... can be selected.<br>Check <a href=https://github.com/maros/Zway-SummarySensor/blob/master/README.md>github.com/maros/Zway-SummarySensor</a> for detailed documentation.",
    "m_title" : "Sensor summary",
    "summary_average" : "Average",
    "summary_count" : "Count non zero values",
