@@ -1,6 +1,6 @@
 {
    "devices_label" : "Geräte",
-   "m_descr" : "Erstellt ein virtuellen Sensor der Daten von mehrern Sensoren zusammenfassen kann. Aggregatsfunktionen wie zB. Minimum, Maximum oder Durchshnitt können ausgewählt werden.\nSiehe https://github.com/maros/Zway-SummarySensor//blob/master/README.md für detailliertere Dokumentation.",
+   "m_descr" : "Erstellt ein virtuellen Sensor der Daten von mehrern Sensoren zusammenfassen kann. Aggregatsfunktionen wie zB. Minimum, Maximum oder Durchshnitt können ausgewählt werden.<br>Siehe  <a href=\"https://github.com/maros/Zway-SummarySensor/blob/master/README.md\">github.com/maros/Zway-SummarySensor</a> für detailliertere Dokumentation.",
    "m_title" : "Sensor Zusammenfassung",
    "summary_average" : "Durchschnitt",
    "summary_count" : "Zähle Sensoren deren Werte ungleich 0 sind.",
