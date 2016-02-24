@@ -26,6 +26,8 @@ SummarySensor.prototype.init = function (config) {
     SummarySensor.super_.prototype.init.call(this, config);
     var self = this;
     
+    self.langFile = self.controller.loadModuleLang("SummarySensor");
+    
     // Create vdev
     this.vDev = this.controller.devices.create({
         deviceId: "SummarySensor_" + this.id,
@@ -33,7 +35,8 @@ SummarySensor.prototype.init = function (config) {
             deviceType: 'sensorMultilevel',
             metrics: {
                 level: 0,
-                icon: ''
+                icon: '',
+                title: self.langFile.m_title+' '+self.langFile['summary_'+self.config.summary]
             }
         },
         overlay: {
