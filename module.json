@@ -32,7 +32,6 @@
                "__summary_min__",
                "__summary_max__",
                "__summary_count__",
-               "__summary_count__",
                "__summary_sum__"
             ],
             "order" : 1
