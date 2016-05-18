@@ -4,7 +4,8 @@
    "defaults" : {
       "description" : "__m_descr__",
       "summary" : "average",
-      "title" : "__m_title__"
+      "title" : "__m_title__",
+      "devices": []
    },
    "dependencies" : [],
    "homepage" : "https://github.com/maros/Zway-SummarySensor/",
