@@ -25,9 +25,9 @@ _module = SummarySensor;
 SummarySensor.prototype.init = function (config) {
     SummarySensor.super_.prototype.init.call(this, config);
     var self = this;
-    
+
     self.langFile = self.controller.loadModuleLang("SummarySensor");
-    
+
     // Create vdev
     this.vDev = this.controller.devices.create({
         deviceId: "SummarySensor_" + this.id,
@@ -44,21 +44,21 @@ SummarySensor.prototype.init = function (config) {
         },
         moduleId: this.id
     });
-    
+
     setTimeout(_.bind(self.initCallback,self),15000);
 };
 
 SummarySensor.prototype.initCallback = function() {
     var self = this;
-    
+
     self.callback = _.bind(self.updateSensors,self);
     self.callback();
-    
+
     var firstDevice = self.controller.devices.get(self.config.devices[0]);
     _.each(['metrics:icon','metrics:scaleTitle','probeType'],function(type) {
         self.vDev.set(type,firstDevice.get(type));
     });
-    
+
     _.each(self.config.devices,function(deviceId) {
         var deviceObject = self.controller.devices.get(deviceId);
         if (deviceObject === null) {
@@ -71,19 +71,19 @@ SummarySensor.prototype.initCallback = function() {
 
 SummarySensor.prototype.stop = function() {
     var self = this;
-    
+
     if (self.vDev) {
         self.controller.devices.remove(self.vDev.id);
         self.vDev = undefined;
     }
-    
+
     _.each(self.config.devices,function(deviceId) {
         var deviceObject = self.controller.devices.get(deviceId);
         if (deviceObject!== null) {
             deviceObject.off('change:metrics:level',self.callback);
         }
     });
-    
+
     SummarySensor.super_.prototype.stop.call(this);
 };
 
@@ -93,9 +93,9 @@ SummarySensor.prototype.stop = function() {
 
 SummarySensor.prototype.updateSensors = function() {
     var self = this;
-    
+
     var values = [];
-    
+
     _.each(self.config.devices,function(deviceId) {
         var deviceObject = self.controller.devices.get(deviceId);
         if (deviceObject === null) {
@@ -107,7 +107,7 @@ SummarySensor.prototype.updateSensors = function() {
             values.push(value);
         }
     });
-    
+
     var summary = 0;
     if (values.length > 0) {
         switch(self.config.summary) {
@@ -141,4 +141,3 @@ SummarySensor.prototype.updateSensors = function() {
     self.vDev.set('metrics:level',summary);
     self.vDev.set('metrics:updateTime',summary);
 };
- 
