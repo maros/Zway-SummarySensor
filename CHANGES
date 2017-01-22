@@ -1,3 +1,9 @@
+1.06 2017 Jan 22, Sun
+    * Do not abort if first device is missing
+    * Dist cleanup
+    * Update module title
+    * Set defaults
+
 1.05 2016 Apr 21, Thu
     * Set probeType
     * Update changes

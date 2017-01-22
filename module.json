@@ -3,9 +3,9 @@
    "category" : "device_enhancements",
    "defaults" : {
       "description" : "__m_descr__",
+      "devices" : [],
       "summary" : "average",
-      "title" : "__m_title__",
-      "devices": []
+      "title" : "__m_title__"
    },
    "dependencies" : [],
    "homepage" : "https://github.com/maros/Zway-SummarySensor/",
@@ -71,5 +71,5 @@
       "type" : "object"
    },
    "singleton" : false,
-   "version" : 1.05
+   "version" : "1.06"
 }
