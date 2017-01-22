@@ -50,20 +50,22 @@ SummarySensor.prototype.init = function (config) {
 
 SummarySensor.prototype.initCallback = function() {
     var self = this;
+    var firstDevice;
 
     self.callback = _.bind(self.updateSensors,self);
     self.callback();
-
-    var firstDevice = self.controller.devices.get(self.config.devices[0]);
-    _.each(['metrics:icon','metrics:scaleTitle','probeType'],function(type) {
-        self.vDev.set(type,firstDevice.get(type));
-    });
 
     _.each(self.config.devices,function(deviceId) {
         var deviceObject = self.controller.devices.get(deviceId);
         if (deviceObject === null) {
             console.error('[SummarySensor] Missing device '+deviceId);
         } else {
+            if (_.isUndefined(firstDevice)) {
+                _.each(['metrics:icon','metrics:scaleTitle','probeType'],function(type) {
+                    self.vDev.set(type,deviceObject.get(type));
+                });
+                firstDevice = deviceObject;
+            }
             deviceObject.on('change:metrics:level',self.callback);
         }
     });
